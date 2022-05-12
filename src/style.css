@@ -1,8 +1,41 @@
-#app {
+* {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+  margin: 0;
+
+}
+
+#app {
+  background-color: coral;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+img {
+  max-height: 40vh;
+  margin-bottom: 40px;
+}
+
+.option {
+  padding: 15px;
+  background-color: green;
+  margin-top: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.option > p {
+  color: white;
 }
