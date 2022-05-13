@@ -8,7 +8,4 @@ let initSite: () => void = () => {
 
 
 
-
-
-
 window.addEventListener("load", initSite);

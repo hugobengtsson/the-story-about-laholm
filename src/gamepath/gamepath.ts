@@ -1,10 +1,12 @@
 import { Question } from '../templates'
 
+// Lägg till baseURL för images.
 
 export const gameSteps: Question[] = [
     {
         id: 1,
-        question: "Var ska vi börja?",
+        question: "Vad vill ni se?",
+        imageSrc: "./src/assets/laholm.jpeg",
         option: [
             {
                 text: "Laholm",
@@ -15,7 +17,7 @@ export const gameSteps: Question[] = [
                 nextStep: 4
             },
             {
-                text: "Spela frågespelet!",
+                text: "Spela Gissa Originalet!",
                 nextStep: 7
             },
         ]
@@ -23,6 +25,7 @@ export const gameSteps: Question[] = [
     {
         id: 2,
         question: "Kolla vad fint!",
+        imageSrc: "./src/assets/laholm2.jpeg",
         option:[
             {
                 text: "Jag vill se mer!",
@@ -47,6 +50,7 @@ export const gameSteps: Question[] = [
     {
         id: 4,
         question: "Här har vi stranden!",
+        imageSrc: "./src/assets/mellbystrand.jpeg",
         option: [
             {
                 text: "Oooooh ge mig mer!",
@@ -61,6 +65,7 @@ export const gameSteps: Question[] = [
     {
         id: 5,
         question: "Strandhotellet, restaurang, bar och ibland nattklubb. Kan bli en blöt kväll!",
+        imageSrc: "./src/assets/strandhotellet.jpeg",
         option:[
             {
                 text: "Ännu mer!",
@@ -104,6 +109,7 @@ export const gameSteps: Question[] = [
     {
         id: 8,
         question: "Vem är originalet?",
+        imageSrc: "./src/assets/bondefredrik.jpeg",
         option: [
             {
                 text: "Kattmannen",
