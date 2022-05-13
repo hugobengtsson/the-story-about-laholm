@@ -31,7 +31,6 @@ export function gamePlay(id: number): void {
         let answerText = document.createElement("p");
         answerText.innerHTML = option.text;
 
-
         answerContainer.addEventListener("click", () => {
             gamePlay(option.nextStep)
         })
@@ -40,9 +39,6 @@ export function gamePlay(id: number): void {
         container.append(answerContainer)
 
     });
-
-
-
 
     container.prepend(question)
 
