@@ -3,7 +3,7 @@ import { gamePlay } from './gamepath/gameplay'
 
 
 let initSite: () => void = () => {
-  gamePlay(1);
+  gamePlay(0);
 }
 
 
