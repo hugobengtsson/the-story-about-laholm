@@ -4,9 +4,20 @@ import { Question } from '../templates'
 
 export const gameSteps: Question[] = [
     {
+        id: 0,
+        question: "Skriv in ditt namn så är du gullig",
+        answerType: "input",
+        answer: {
+            answer: "name",
+            nextStep: 1,
+            wrongAnswer: 0,
+        }
+    },
+    {
         id: 1,
         question: "Vad vill ni se?",
         imageSrc: "./src/assets/laholm.jpeg",
+        answerType: "button",
         option: [
             {
                 text: "Laholm",
@@ -26,6 +37,7 @@ export const gameSteps: Question[] = [
         id: 2,
         question: "Kolla vad fint!",
         imageSrc: "./src/assets/laholm2.jpeg",
+        answerType: "button",
         option:[
             {
                 text: "Jag vill se mer!",
@@ -40,6 +52,7 @@ export const gameSteps: Question[] = [
     {
         id: 3,
         question: "Det finns inte så mycket mer att se..",
+        answerType: "button",
         option:[
             {
                 text: "Tillbaka till starten.",
@@ -51,6 +64,7 @@ export const gameSteps: Question[] = [
         id: 4,
         question: "Här har vi stranden!",
         imageSrc: "./src/assets/mellbystrand.jpeg",
+        answerType: "button",
         option: [
             {
                 text: "Oooooh ge mig mer!",
@@ -66,6 +80,7 @@ export const gameSteps: Question[] = [
         id: 5,
         question: "Strandhotellet, restaurang, bar och ibland nattklubb. Kan bli en blöt kväll!",
         imageSrc: "./src/assets/strandhotellet.jpeg",
+        answerType: "button",
         option:[
             {
                 text: "Ännu mer!",
@@ -80,6 +95,7 @@ export const gameSteps: Question[] = [
     {
         id: 6,
         question: "Finns inte mer..",
+        answerType: "button",
         option: [
             {
                 text: "Gå tillbaka.",
@@ -91,6 +107,7 @@ export const gameSteps: Question[] = [
         id: 7,
         question: "Vem är originalet?",
         imageSrc: "./src/assets/epamats.jpeg",
+        answerType: "button",
         option: [
             {
                 text: "Bonde-Fredrik",
@@ -110,6 +127,7 @@ export const gameSteps: Question[] = [
         id: 8,
         question: "Vem är originalet?",
         imageSrc: "./src/assets/bondefredrik.jpeg",
+        answerType: "button",
         option: [
             {
                 text: "Kattmannen",
@@ -128,6 +146,7 @@ export const gameSteps: Question[] = [
     {
         id: 9,
         question: "Varför kallas Kattmannen för Kattmannen?",
+        answerType: "button",
         option: [
             {
                 text: "Han säljer katter.",
@@ -146,6 +165,7 @@ export const gameSteps: Question[] = [
     {
         id: 10,
         question: "Marita är ett av originalen från Våxtorp, vad är hennes största intresse?",
+        answerType: "button",
         option: [
             {
                 text: "Samma som Mats, EPA-traktorer.",
@@ -164,6 +184,7 @@ export const gameSteps: Question[] = [
     {
         id: 11,
         question: "Jahopp, det här var ju kanske lite för enkelt? Nu är frågorna helt slut..",
+        answerType: "button",
         option: [
             {
                 text: "Tillbaka till starten.",
@@ -174,6 +195,7 @@ export const gameSteps: Question[] = [
     {
         id: 12,
         question: "Hahah du kan ju ingenting om Laholms original.",
+        answerType: "button",
         option: [
             {
                 text: "Börja om frågespelet.",

@@ -29,6 +29,7 @@ img {
 }
 
 .option {
+  min-width: 200px;
   padding: 15px;
   background-color: green;
   margin-top: 10px;
@@ -38,4 +39,10 @@ img {
 
 .option > p {
   color: white;
+}
+
+input {
+  padding: 15px;
+  width: 350px;
+  font-size: 18px;
 }
