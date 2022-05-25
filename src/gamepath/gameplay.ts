@@ -45,9 +45,11 @@ export function gamePlay(id: number): void {
         input.type = "text";
         input.placeholder = "Ditt namn här!";
 
-        let button = document.createElement("div")
+        let button = document.createElement("div");
         button.classList.add("option");
         button.innerHTML = "Full fart framåt!";
+
+        let errorMessageContainer = document.createElement("div");
 
         button.addEventListener("click", () => {
 
@@ -55,18 +57,20 @@ export function gamePlay(id: number): void {
 
                 gamePlay(currentStep.answer!.nextStep);
 
+            } else if (!input.value || input.value == "" || input.value == " ") {
+
+                errorMessageContainer.innerHTML = "";
+
+                let message = document.createElement("p");
+                message.innerHTML = "Den lätta går jag inte på..";
+
+                errorMessageContainer.append(message)
+
             } else if (currentStep.answer!.answer === "name" ) {
 
                 localStorage.setItem("name", input.value);
 
                 gamePlay(currentStep.answer!.nextStep);
-
-            } else if (!input.value || input.value == "") {
-
-                let message = document.createElement("p");
-                message.innerHTML = "Den lätta går jag inte på.."
-
-                container.append(message)
 
             } else {
                 gamePlay(currentStep.answer!.wrongAnswer);
@@ -75,7 +79,7 @@ export function gamePlay(id: number): void {
         })
 
 
-        container.append(input, button)
+        container.append(input, button, errorMessageContainer)
     }
 
     // Prepending the question element to have it at the top of the page. 
