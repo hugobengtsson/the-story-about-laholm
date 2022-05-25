@@ -107,21 +107,12 @@ export const gameSteps: Question[] = [
         id: 7,
         question: "Vem är originalet?",
         imageSrc: "./src/assets/epamats.jpeg",
-        answerType: "button",
-        option: [
-            {
-                text: "Bonde-Fredrik",
-                nextStep: 12
-            },
-            {
-                text: "EPA-Mats",
-                nextStep: 8
-            },
-            {
-                text: "Hundmannen",
-                nextStep: 12
-            }
-        ]
+        answerType: "input",
+        answer: {
+            answer: "EPA-Mats",
+            nextStep: 8,
+            wrongAnswer: 12,
+        }
     },
     {
         id: 8,
