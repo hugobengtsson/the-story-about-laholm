@@ -1,4 +1,5 @@
 import { gameSteps } from "./gamepath";
+import renderButtons from "./renderButtons";
 
 export function gamePlay(id: number): void {
 
@@ -26,28 +27,19 @@ export function gamePlay(id: number): void {
     }
 
     // Checks if the gameStep has the type of "button", if so it renders the buttons.
-    if (currentStep.answerType === "button") {
+    if (currentStep.answerType === "button" && currentStep.option) {
 
-        // Looping through the option array.
-        currentStep.option!.forEach(option => {
+        let elements: HTMLDivElement[] = renderButtons(currentStep.option!)
 
-            let answerContainer = document.createElement("div");
-            answerContainer.classList.add("option");
+        elements.forEach((element) => {
 
-            let answerText = document.createElement("p");
-            answerText.innerHTML = option.text;
+            container.append(element)
 
-            answerContainer.addEventListener("click", () => {
-                gamePlay(option.nextStep)
-            })
-
-            answerContainer.append(answerText)
-            container.append(answerContainer)
-
-        });
+        })
+        
     }
 
-    if (currentStep.answerType === "input") {
+    if (currentStep.answerType === "input" && currentStep.answer) {
 
         let input = document.createElement('input');
         input.type = "text";
@@ -55,25 +47,30 @@ export function gamePlay(id: number): void {
 
         let button = document.createElement("div")
         button.classList.add("option");
-        button.innerHTML = "Spara"
+        button.innerHTML = "Full fart framåt!";
 
         button.addEventListener("click", () => {
 
-            if (!input.value) {
+            if ( input.value.toLowerCase() === currentStep.answer!.answer.toLowerCase() ) {
 
-                let message = document.createElement("p");
-                message.innerHTML = "Försök inte fuska nu.."
+                gamePlay(currentStep.answer!.nextStep);
 
-                container.append(message)
             } else if (currentStep.answer!.answer === "name" ) {
 
                 localStorage.setItem("name", input.value);
 
                 gamePlay(currentStep.answer!.nextStep);
 
+            } else if (!input.value || input.value == "") {
+
+                let message = document.createElement("p");
+                message.innerHTML = "Den lätta går jag inte på.."
+
+                container.append(message)
+
+            } else {
+                gamePlay(currentStep.answer!.wrongAnswer);
             }
-
-
 
         })
 

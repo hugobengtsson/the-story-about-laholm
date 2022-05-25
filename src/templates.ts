@@ -8,7 +8,7 @@ export interface Question {
     answer?: Input
 };
 
-interface Option {
+export interface Option {
         text: string,
         nextStep: number
 }
@@ -18,4 +18,5 @@ interface Input {
     nextStep: number,
     wrongAnswer: number
 }
-// Kan lägga till en interface för "questionData" med question och imgsrc
+
+// Kan lägga till en interface för "questionData" med question och imgsrc??
